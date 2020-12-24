@@ -6,3 +6,9 @@ client/node_modules
 
 # Frontend build
 client/dist
+
+# Website node modules
+www/node_modules
+
+# Website build
+www/dist

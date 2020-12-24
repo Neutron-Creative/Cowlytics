@@ -2,7 +2,7 @@
   <div class="flex flex-row items-center justify-center w-screen h-screen">
     <div class="fixed z-10 shadow-lg top-0 left-0 bg-white hidden lg:flex flex-col px-5 py-4 pt-12 items-center justify-start space-y-4 h-screen mr-auto text-gray-400" style="font-size:9px;">
       
-      <img title="Cowlytics by Neutron Creative" style="width:40px;height:40px;" class="cursor-pointer rounded-lg bg-indigo-100 mb-4 flex flex-row items-center justify-center" src="/Favicon%20Padded.png"/>
+      <img title="Cowlytics by Neutron Creative" style="width:40px;height:40px;" class="cursor-pointer rounded-lg bg-indigo-100 mb-4 flex flex-row items-center justify-center" src="/Favicon@2x.png"/>
       
       <n-link to='/' class="flex flex-col items-center justify-center space-y-2">
         <div style="width:36px;height:36px;" class="flex items-center justify-center rounded-lg bg-blue-100 border border-2 border-white hover:border-blue-200 hover:bg-blue-200 cursor-pointer">

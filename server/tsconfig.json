@@ -1,0 +1,34 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+      "incremental": true,
+      "target": "ES2020",
+      "module": "CommonJS",
+      "outDir": "dist",
+      "removeComments": true,
+      "strict": true,
+      "skipLibCheck": true,
+      "strictNullChecks": true,
+      "noImplicitThis": true,
+      "inlineSourceMap": true,
+      "inlineSources": true,
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "allowJs": false,
+      "typeRoots": [
+        "node_modules/@types",
+        "src/@types"
+      ]
+    },
+    "include": [
+      // Only copied if config.json exists in src dir
+      "src/config/config.json",
+      "src"
+    ],
+    "exclude": [
+      "node_modules"
+    ],
+    "ts-node": {
+      "files": true
+    }
+  }
