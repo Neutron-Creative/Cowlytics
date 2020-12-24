@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col items-center justify-center w-screen min-h-screen h-auto">
     <Nuxt />
-    <footer class="mt-auto w-full flex flex-row space-x-4 items-center justify-center p-4 lg:p-8 text-center bg-gray-800 text-gray-500 text-sm font-medium">
+    <footer class="mt-auto w-full flex flex-col lg:flex-row space-x-4 items-center justify-center p-4 lg:p-8 text-center bg-gray-800 text-gray-500 text-sm font-medium">
       <span>Copyright ©{{ current_year }} Neutron Creative Inc. All rights reserved.</span>
       <a class="hover:underline" href="#">Terms of Service</a>
       <a class="hover:underline" href="#">Privacy Policy</a>
@@ -35,7 +35,7 @@
     box-sizing: border-box;
   }
 
-  * {outline:none !important;}
+  * {box-sizing:border-box; outline:none !important;}
 </style>
 <script>
 export default {
