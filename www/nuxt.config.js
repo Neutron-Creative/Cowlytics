@@ -4,11 +4,18 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'www',
+    title: 'Cowlytics - The open-source analytics dashboard for Stripe based SaaS businesses',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: 'Cowlytics is the simple & easy-to-use analytics dashboard for your Stripe based SaaS. Import your Stripe account, invite your team, and get going in seconds.' },
+      { name: 'og:image', content: 'https://cowlytics.neturon.so/Open Graph Image.png' },
+      { name: 'og:title', content: 'Cowlytics - The open-source analytics dashboard for Stripe based SaaS businesses' },
+      { name: 'og:description', content: 'Cowlytics is the simple & easy-to-use analytics dashboard for your Stripe based SaaS. Import your Stripe account, invite your team, and get going in seconds.'},
+      { name: 'twitter:image', content: 'https://cowlytics.neturon.so/Open Graph Image.png' },
+      { name: 'twitter:title', content: 'Cowlytics - The open-source analytics dashboard for Stripe based SaaS businesses' },
+      { name: 'twitter:description', content: 'Cowlytics is the simple & easy-to-use analytics dashboard for your Stripe based SaaS. Import your Stripe account, invite your team, and get going in seconds.'},
+      { name: 'twitter:card', content: 'summary_large_image'},
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
