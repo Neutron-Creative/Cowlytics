@@ -14,7 +14,7 @@ The analytics dashboard for Stripe based SaaS businesses that doesn't take a cal
         <img src="https://img.shields.io/badge/beta-0.1.0-%2303d2d4" alt="Version">
     </a>
     <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">
-        <img src="https://img.shields.io/badge/license-Unlicensed-red" alt="License"/>
+        <img src="https://img.shields.io/badge/license-GPL-green" alt="License"/>
     </a>
     <!-- Replace with cowlytics API
     <a href="https://app.singlelink.co/analytics"/>

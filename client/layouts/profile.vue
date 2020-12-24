@@ -32,11 +32,11 @@
       <div class="relative w-10 h-10">
         <img @click="profile_menu=!profile_menu" class="w-10 h-10 rounded-full cursor-pointer" src="https://scontent-iad3-1.cdninstagram.com/v/t51.2885-19/s150x150/106238897_725586734946472_5048956344165679204_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_ohc=hIC4pMKn26EAX---DUZ&tp=1&oh=e970e1aa8782ae9d4affd3d199c9adcb&oe=600EB36F"/>
         <div v-if="profile_menu" class="absolute bg-white text-xs rounded-lg shadow-lg border border-gray-200" style="width:150px;left: calc(100% + 20px);bottom:0;">
-          <div class="flex flex-row items-center justify-center space-x-4 text-center p-2 w-full hover:bg-gray-100 cursor-pointer">Settings</div>
-          <div class="flex flex-row items-center justify-center space-x-4 text-center p-2 w-full hover:bg-gray-100 cursor-pointer">Help Center</div>
-          <div class="flex flex-row items-center justify-center space-x-4 text-center p-2 w-full hover:bg-gray-100 cursor-pointer">Changelog</div>
-          <div class="flex flex-row items-center justify-center space-x-4 text-center p-2 w-full hover:bg-gray-100 cursor-pointer">Status Page</div>
-          <div class="flex flex-row items-center justify-center space-x-4 text-center p-2 w-full hover:bg-gray-100 cursor-pointer">Sign Out</div>
+          <n-link to="/users/settings" class="flex flex-row items-center justify-center space-x-4 text-center p-2 w-full hover:bg-gray-100 cursor-pointer">Settings</n-link>
+          <a href="#" class="flex flex-row items-center justify-center space-x-4 text-center p-2 w-full hover:bg-gray-100 cursor-pointer">Help Center</a>
+          <a href="https://github.com/Neutron-Creative/Cowlytics" class="flex flex-row items-center justify-center space-x-4 text-center p-2 w-full hover:bg-gray-100 cursor-pointer">Changelog</a>
+          <a href="https://status.singlelink.co" class="flex flex-row items-center justify-center space-x-4 text-center p-2 w-full hover:bg-gray-100 cursor-pointer">Status Page</a>
+          <n-link to='/users/login' class="flex flex-row items-center justify-center space-x-4 text-center p-2 w-full hover:bg-gray-100 cursor-pointer">Sign Out</n-link>
         </div>
       </div>
     </div>
