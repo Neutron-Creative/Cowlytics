@@ -1,0 +1,8 @@
+# Root node modules
+node_modules
+
+# Frontend node modules
+client/node_modules
+
+# Frontend build
+client/dist
