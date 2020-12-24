@@ -42,6 +42,11 @@ The analytics dashboard for Stripe based SaaS businesses that doesn't take a cal
   <a href="#related">Related</a> •
   <a href="#license">License</a>
 </p>
+
+<br>
+
+<img src="/client/static/Github Banner.png"/>
+
 <br>
 
 <h2 id="get-started">Getting started</h2>
