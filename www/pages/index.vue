@@ -175,6 +175,14 @@
               If you don't love our software - we'll give you your money back with no questions asked within 30 days of purchase. Outside that window? Just send us an email at support@neutroncreative.com and we'd be happy to take a look.
             </div>
           </div>
+          <div class="flex flex-col lg:flex-row border border-gray-200 border-l-0 border-t-0 border-r-0">
+            <div class="flex flex-col w-full lg:w-1/3 p-8 pb-2 lg:pb-8 font-medium text-gray-800">
+              Do you offer any discounts (student, open-source, etc.)?
+            </div>
+            <div class="flex flex-col w-full lg:w-2/3 p-8 pt-2 lg:pt-8 text-gray-500 leading-relaxed">
+              If you truly believe you could benefit from our software but can't find any room in your budget - reach out with some context and we'll work something out. We're big advocates for software accessiblity and want to ensure our software is available for all, but need to bill all able members the full price as consistently as possible in able to afford other members the oppurtunity to use our software free.
+            </div>
+          </div>
         </div>
       </div>
     </section>
