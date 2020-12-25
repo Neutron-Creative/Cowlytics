@@ -37,11 +37,12 @@
         <div class="flex flex-col items-center justify-center w-full lg:w-1/2 lg:h-screen bg-white">
             <div class="max-w-md flex flex-col items-center justify-center w-full p-12">
                 <h1 class="w-full text-4xl font-bold text-gray-900 mb-8">Get smarter SaaS insights in seconds</h1>
-                <input type="text" placeholder="Full Name" class="mb-4 outline-none text-gray-500 text-sm p-3 border rounded-lg border-gray-200 w-full focus:ring focus:ring-indigo-600 focus:ring-opacity-50"/>
-                <input type="text" placeholder="Email Address" class="mb-4 outline-none text-gray-500 text-sm p-3 border rounded-lg border-gray-200 w-full focus:ring focus:ring-indigo-600 focus:ring-opacity-50"/>
-                <input type="password" placeholder="Password" class="mb-4 outline-none text-gray-500 text-sm p-3 border rounded-lg border-gray-200 w-full focus:ring focus:ring-indigo-600 focus:ring-opacity-50"/>
-                <n-link to="/" type="button" class="mb-4 text-center active:ring ring-indigo-600 ring-opacity-50 hover:bg-indigo-500 bg-indigo-600 text-white text-sm font-semibold rounded-lg w-full px-6 py-4">Start your 14 day free trial</n-link>
-                <n-link to="/user/login" class="text-center mx-auto text-xs font-medium text-indigo-600 hover:underline">Already have an account?</n-link>
+                <div v-if="error" class="w-full rounded-lg bg-red-200 border border-red-400 text-red-400 font-medium text-xs text-center p-3 mb-4">{{ error }}</div>
+                <input v-model="name" type="text" placeholder="Full Name" class="mb-4 outline-none text-gray-500 text-sm p-3 border rounded-lg border-gray-200 w-full focus:ring focus:ring-indigo-600 focus:ring-opacity-50"/>
+                <input v-model="email" type="text" placeholder="Email Address" class="mb-4 outline-none text-gray-500 text-sm p-3 border rounded-lg border-gray-200 w-full focus:ring focus:ring-indigo-600 focus:ring-opacity-50"/>
+                <input v-model="password" type="password" placeholder="Password" class="mb-4 outline-none text-gray-500 text-sm p-3 border rounded-lg border-gray-200 w-full focus:ring focus:ring-indigo-600 focus:ring-opacity-50"/>
+                <button @click="attempt_signup" type="button" class="mb-4 text-center active:ring ring-indigo-600 ring-opacity-50 hover:bg-indigo-500 bg-indigo-600 text-white text-sm font-semibold rounded-lg w-full px-6 py-4">Start your 14 day free trial</button>
+                <n-link to="/users/login" class="text-center mx-auto text-xs font-medium text-indigo-600 hover:underline">Already have an account?</n-link>
                 <div class="leading-relaxed text-sm my-8 text-gray-500">By clicking Sign Up, you agree to our <a class="text-gray-800 hover:underline" href="#">Terms of Service</a> and <a class="text-gray-800 hover:underline" href="#">Privacy Policy</a></div>
                 <div class="my-4 flex flex-col w-full text-gray-700">
                     Have a unique organization use case?
@@ -55,11 +56,29 @@
 <script>
 export default {
     data: () => {
-
+        return {
+            email: null,
+            password: null,
+            name: null,
+            error: null
+        };
     },
     methods: {
         async attempt_signup() {
+            // Validate data
+                if(!this.email) return this.error = 'Email is required to sign up!';
+                if(!this.password) return this.error = 'Password is required to sign up!';
+                if(!this.name) return this.error = 'Full name is required to sign up!';
+            // Attempt signup
 
+            // Check for errors
+
+            // If errors, return error
+
+            // Else, store auth data & continue
+
+            // Goto dashboard
+            this.$router.push('/',{});
         }
     }
 }

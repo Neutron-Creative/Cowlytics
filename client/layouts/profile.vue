@@ -45,7 +45,7 @@
           <div style="bottom:20px;" class="flex flex-row items-center justify-center w-10/12 max-w-8xl p-4 rounded-lg bg-gray-800 fixed shadow-lg">
             <span class="text-white font-medium mr-2 text-sm">Cowlytics for Company Inc: </span>
             <span class="text-gray-400 text-sm">Get these metrics for your company!</span>
-            <n-link class="bg-white text-indigo-600 font-semibold text-sm px-6 py-3 rounded-lg ml-auto hover:bg-gray-100" to="/create-account">
+            <n-link class="bg-white text-indigo-600 font-semibold text-sm px-6 py-3 rounded-lg ml-auto hover:bg-gray-100" to="/users/create-account">
               Start your free trial
             </n-link>
           </div>
