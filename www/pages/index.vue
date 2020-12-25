@@ -35,7 +35,7 @@
               I am in love with Cowlytics. I can't tell you how much it's changed my life. I'm fucking mooing around the house for crying out loud. 
             </div>
             <div class="flex flex-row">
-              <img class="rounded-full w-14 mr-4 border-white border-2" src="https://scontent-iad3-1.cdninstagram.com/v/t51.2885-19/s150x150/106238897_725586734946472_5048956344165679204_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_ohc=hIC4pMKn26EAX---DUZ&tp=1&oh=e970e1aa8782ae9d4affd3d199c9adcb&oe=600EB36F"/>
+              <img class="rounded-full  h-14 mr-4 border-white border-2" src="https://scontent-iad3-1.cdninstagram.com/v/t51.2885-19/s150x150/106238897_725586734946472_5048956344165679204_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_ohc=hIC4pMKn26EAX---DUZ&tp=1&oh=e970e1aa8782ae9d4affd3d199c9adcb&oe=600EB36F"/>
               <div class="flex flex-col items-start justify-center">
                 <span class="font-semibold text-white mb-1">Jane Doe</span>
                 <span class="text-indigo-100 font-medium">CEO, Company Inc</span>
@@ -48,7 +48,7 @@
               I am in love with Cowlytics. I can't tell you how much it's changed my life. I'm fucking mooing around the house for crying out loud. 
             </div>
             <div class="flex flex-row">
-              <img class="rounded-full w-14 mr-4 border-white border-2" src="https://scontent-iad3-1.cdninstagram.com/v/t51.2885-19/s150x150/106238897_725586734946472_5048956344165679204_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_ohc=hIC4pMKn26EAX---DUZ&tp=1&oh=e970e1aa8782ae9d4affd3d199c9adcb&oe=600EB36F"/>
+              <img class="rounded-full w-14 h-14 mr-4 border-white border-2" src="https://scontent-iad3-1.cdninstagram.com/v/t51.2885-19/s150x150/106238897_725586734946472_5048956344165679204_n.jpg?_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_ohc=hIC4pMKn26EAX---DUZ&tp=1&oh=e970e1aa8782ae9d4affd3d199c9adcb&oe=600EB36F"/>
               <div class="flex flex-col items-start justify-center">
                 <span class="font-semibold text-white mb-1">Jane Doe</span>
                 <span class="text-indigo-100 font-medium">CEO, Company Inc</span>
