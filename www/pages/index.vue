@@ -6,26 +6,15 @@
           <img src="/Icon Bare@2x.png" class="w-8 h-auto mr-3">
           <span class="text-2xl font-bold text-gray-900">Cowlytics</span>
         </nav>
-        <h1 class="text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 flex flex-row items-center justify-center flex-wrap">
+        <!--<h1 class="text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 flex flex-row items-center justify-center flex-wrap">
           Forecast my 
-          <select class="font-extrabold mx-4 text-indigo-600 cursor-pointer">
-            <option class="text-base flex font-medium capitalize text-gray-600">subscribers</option>
-            <option class="text-base flex font-medium capitalize text-gray-600">revenue</option>
-            <option class="text-base flex font-medium capitalize text-gray-600">cash flow</option>
-            <option class="text-base flex font-medium capitalize text-gray-600">users</option>
-            <option class="text-base flex font-medium capitalize text-gray-600">retention</option>
-         </select>
+          <span class="font-extrabold mx-4 text-indigo-600 cursor-pointer">subscribers</span>
           in
-          <select class="font-extrabold ml-4 text-indigo-600 cursor-pointer">
-            <option class="text-base flex font-medium capitalize text-gray-600">30 days</option>
-            <option class="text-base flex font-medium capitalize text-gray-600">90 days</option>
-            <option class="text-base flex font-medium capitalize text-gray-600">6 months</option>
-            <option class="text-base flex font-medium capitalize text-gray-600">1 year</option>
-          </select>
-          </h1>
-        <!--<h1 class="text-5xl lg:text-6xl font-extrabold max-w-3xl text-gray-900 mb-6">Good data & good decisions made simple</h1>-->
-        <p class="max-w-4xl text-xl lg:text-2xl text-gray-500 mb-6 italic">Doesn't that sound nice?</p>
-        <p class="max-w-4xl text-xl lg:text-2xl text-gray-500 mb-6" style="line-height:150%;">Meet Cowlytics, the open-source analytics & forecasting tool that provides automated insights alongside your real-time formatted data to help you make intelligent decisions with predictable results for your subscription business.</p>
+          <span class="font-extrabold ml-4 text-indigo-600 cursor-pointer">1 year</span>
+          </h1>-->
+        <h1 class="text-4xl lg:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6" style="line-height:1.2;">Realtime analytics and forecasts <br class="hidden lg:block">for your Stripe subscription business</h1>
+        <!--<p class="max-w-4xl text-xl lg:text-2xl text-gray-500 mb-6 italic">Doesn't that sound nice?</p>-->
+        <p class="max-w-5xl text-xl lg:text-2xl text-gray-500 mb-6" style="line-height:150%;">Meet Cowlytics, the open-source analytics & forecasting tool that provides automated insights alongside your real-time formatted data from Stripe to help you make intelligent decisions with predictable results for your subscription business.</p>
         <div class="pb-8 lg:pb-0 flex flex-col lg:flex-row items-center justify-center mb-12 space-y-4 lg:space-y-0 lg:space-x-4" v-if="launched">
           <a class="lg:w-auto w-full shadow px-8 py-5 font-semibold bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 active:ring-4 ring-indigo-600 ring-opacity-50" href="https://app.cowlytics.co/users/create-account">Start your 14 day free trial</a>
           <a class="lg:w-auto w-full shadow px-8 py-5 font-semibold bg-gray-100 text-indigo-600 rounded-lg hover:bg-gray-200 active:ring-4 ring-indigo-600 ring-opacity-50" href="https://app.cowlytics.co/users/login">Sign in</a>
@@ -38,12 +27,10 @@
     </section>
     <section class="flex flex-col items-center justify-center w-screen p-8  text-white lg:py-20 text-center bg-gray-800 overlay-container">
       <div class="flex flex-col w-full max-w-6xl items-center justify-center">
-        <h3 class="text-gray-400 uppercase tracking-wide font-semibold mb-4">Monitor your SaaS performance from</h3>
-        <div class="flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-6">
-          <img title="Coming soon" class="w-24 h-auto opacity-30" style="filter:grayscale(1);" src="/shopify.png"/>
-          <img title="Coming soon" class="w-24 h-auto opacity-50" style="filter:grayscale(1);" src="/braintree.svg"/>
-          <img class="w-24 h-auto" src="/stripe.svg"/>
+        <h3 class="text-gray-400 uppercase tracking-wide font-semibold mb-8">Monitor your SaaS performance from</h3>
+        <div class="flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-12">
           <img title="Coming soon" class="w-24 h-auto opacity-50" style="filter:grayscale(1);" src="/chargebee.svg"/>
+          <img title="Stripe integration now available" class="w-24 h-auto" src="/stripe.svg"/>
           <img title="Coming soon" class="w-24 h-auto opacity-50" style="filter:grayscale(1);" src="/recurly.svg"/>
         </div>
       </div>
@@ -125,15 +112,15 @@
               <span class="font-extrabold text-5xl text-gray-900">$30</span>
               <span class="text-gray-500 font-medium ml-2">USD</span>
             </div>
-            <span class="text-gray-500 font-medium text-sm mb-6">per month</span>
-            <span class="text-xs text-gray-500 mb-6">Unlimited everything, no catch.</span>
+            <span class="text-gray-500 font-medium text-sm mb-6">per month, paid annually</span>
+            <span class="text-xs text-gray-500 mb-6">$35/Month if paid monthly</span>
             <a v-if="launched" class="text-sm font-semibold w-full text-white bg-indigo-600 hover:bg-indigo-500 text-center py-4 px-6 rounded-lg" href="https://app.cowlytics.co/users/create-account">Start your free trial</a>
             <a v-if="!launched" class="text-sm font-semibold w-full text-white bg-indigo-600 hover:bg-indigo-500 text-center py-4 px-6 rounded-lg" href="https://www.producthunt.com/upcoming/cowlytics">Join the waitlist</a>
           </div>
         </div>
-        <div class="border border-gray-200 bg-white shadow-xl z-10 flex flex-col lg:flex-row items-center justify-center p-4 rounded-lg mb-12" style="margin-top:-30px;">
-          <span class="text-indigo-600 font-semibold mb-1 lg:mb-0 lg:mr-2">Small Business Notice:</span>
-          Cowlytics is free under $500 MRR & discounted until $1000 MRR!
+        <div class="border border-gray-200 bg-white shadow-xl text-lg font-medium text-gray-600 z-10 flex flex-col lg:flex-row items-center justify-center p-4 rounded-lg mb-12" style="margin-top:-30px;">
+          <span class="text-indigo-600 font-semibold mb-1 lg:mb-0 lg:mr-2">Better for small business:</span>
+          Cowlytics is free under $500 MRR & 50% off until you reach $1000 MRR!
         </div>
         <a href="https://github.com/Neutron-Creative/Cowlytics" class="text-sm text-gray-500 hover:underline mb-20">Looking for the free, self-hosted version - Cowlytics Core?</a>
         <div class="flex flex-col w-full text-left">
@@ -228,14 +215,14 @@
 
 <style scoped>
   .overlay-container {
-    margin-top:-650px;
-    padding-top: 640px;
+    margin-top:-800px;
+    padding-top: 790px;
   }
 
   @media(max-width:1000px) {
     .overlay-container {
-      margin-top:-300px;
-      padding-top: 340px;
+      margin-top:-360px;
+      padding-top: 400px;
     }
   }
 </style>
