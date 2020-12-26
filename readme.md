@@ -45,7 +45,7 @@ The analytics dashboard for Stripe based SaaS businesses that doesn't take a cal
 
 <br>
 
-<img src="/client/static/Github Banner.png"/>
+<img src="/www/static/Open Graph Image.png"/>
 
 <br>
 
