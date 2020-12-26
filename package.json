@@ -1,11 +1,15 @@
 {
   "name": "cowlytics",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "The open-source analytics dashboard for Stripe based SaaS businesses.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "version": "auto-changelog -p && git add CHANGELOG.md"
   },
   "author": "Neutron Creative Inc.",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "auto-changelog": "^2.2.1"
+  }
 }
