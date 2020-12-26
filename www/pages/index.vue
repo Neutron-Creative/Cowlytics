@@ -113,10 +113,11 @@
             <a v-if="!launched" class="text-sm font-semibold w-full text-white bg-indigo-600 hover:bg-indigo-500 text-center py-4 px-6 rounded-lg" href="https://www.producthunt.com/upcoming/cowlytics">Join the waitlist</a>
           </div>
         </div>
-        <div class="border border-gray-200 bg-white shadow-xl z-10 flex flex-col lg:flex-row items-center justify-center p-4 rounded-lg mb-32" style="margin-top:-30px;">
+        <div class="border border-gray-200 bg-white shadow-xl z-10 flex flex-col lg:flex-row items-center justify-center p-4 rounded-lg mb-12" style="margin-top:-30px;">
           <span class="text-indigo-600 font-semibold mb-1 lg:mb-0 lg:mr-2">Small Business Notice:</span>
           Cowlytics is free under $500 MRR & discounted until $1000 MRR!
         </div>
+        <a href="https://github.com/Neutron-Creative/Cowlytics" class="text-sm text-gray-500 hover:underline mb-20">Looking for the free, self-hosted version - Cowlytics Core?</a>
         <div class="flex flex-col w-full text-left">
           <h2 class="text-3xl font-extrabold text-gray-900 py-6 border-2 border-gray-200 border-t-0 border-l-0 border-r-0 w-full text-left">Frequently asked questions</h2>
           <div class="flex flex-col lg:flex-row border border-gray-200 border-l-0 border-t-0 border-r-0">
