@@ -1,7 +1,7 @@
 <template>
     <div class="w-screen h-screen flex flex-row items-center justify-center">
-        <div class="flex flex-col items-center justify-center w-full lg:w-1/2 lg:h-screen bg-gray-100">
-            <div class="max-w-md flex flex-col items-start justify-center w-full p-12">
+        <div class="flex flex-col items-center lg:items-end justify-center w-full lg:w-1/2 lg:h-screen bg-gray-100">
+            <div class="max-w-md flex flex-col items-start justify-center w-full p-12 lg:mr-20">
                 <div class="flex flex-row items-center justify-start mb-12">
                     <img class="w-10 mr-4" src="/Icon Bare.png"/>
                     <span class="text-3xl font-bold">Cowlytics</span>
@@ -34,8 +34,8 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-col items-center justify-center w-full lg:w-1/2 lg:h-screen bg-white">
-            <div class="max-w-md flex flex-col items-center justify-center w-full p-12">
+        <div class="flex flex-col items-center lg:items-start justify-center w-full lg:w-1/2 lg:h-screen bg-white">
+            <div class="max-w-md flex flex-col items-center justify-center w-full p-12 lg:ml-20">
                 <h1 class="w-full text-4xl font-bold text-gray-900 mb-8">Get smarter SaaS insights in seconds</h1>
                 <div v-if="error" class="w-full rounded-lg bg-red-200 border border-red-400 text-red-400 font-medium text-xs text-center p-3 mb-4">{{ error }}</div>
                 <input v-model="name" type="text" placeholder="Full Name" class="mb-4 outline-none text-gray-500 text-sm p-3 border rounded-lg border-gray-200 w-full focus:ring focus:ring-indigo-600 focus:ring-opacity-50"/>
@@ -46,7 +46,7 @@
                 <div class="leading-relaxed text-sm my-8 text-gray-500">By clicking Sign Up, you agree to our <a class="text-gray-800 hover:underline" href="#">Terms of Service</a> and <a class="text-gray-800 hover:underline" href="#">Privacy Policy</a></div>
                 <div class="my-4 flex flex-col w-full text-gray-700">
                     Have a unique organization use case?
-                    <a href="#" class="text-indigo-600 font-medium mt-1 hover:underline">Get enterprise assistance</a>
+                    <n-link to="/users/enterprise-support" class="text-indigo-600 font-medium mt-1 hover:underline">Get enterprise assistance</n-link>
                 </div>
             </div>
             
@@ -55,6 +55,9 @@
 </template>
 <script>
 export default {
+    head: {
+        title: 'Create account - Cowlytics'
+    },
     data: () => {
         return {
             email: null,
@@ -78,7 +81,7 @@ export default {
             // Else, store auth data & continue
 
             // Goto dashboard
-            this.$router.push('/',{});
+            window.location.href='/get-started';
         }
     }
 }

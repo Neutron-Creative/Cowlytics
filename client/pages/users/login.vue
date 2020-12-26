@@ -15,6 +15,9 @@
 </template>
 <script>
 export default {
+    head: {
+        title: 'Login - Cowlytics'
+    },
     data: () => {
         return {
             email: null,

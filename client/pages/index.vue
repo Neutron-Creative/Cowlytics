@@ -1,40 +1,42 @@
 <template>
     <!-- Container -->
-    <div class="flex flex-col w-full h-screen px-8 lg:px-0 py-12">
+    <div class="flex flex-col w-full h-screen lg:px-0 py-12">
         <!-- Header row -->
-        <div class="flex flex-row items-center justify-center">
+        <div class="flex flex-col lg:flex-row items-center justify-center pt-8 lg:pt-0">
             <!-- Page header -->
-            <h1 class="text-2xl font-semibold text-gray-900 flex flex-row mr-auto items-center justify-start">
-                <img src="https://neutroncreative.com/favicon.ico" class="rounded-full w-8 mr-4"/>
+            <h1 class="flex flex-col lg:flex-row items-center justify-center text-center mr-0 lg:text-left text-2xl font-semibold text-gray-900 flex flex-row lg:mr-auto items-center justify-start">
+                <img src="https://neutroncreative.com/favicon.ico" class="mb-4 lg:mb-0 rounded-full w-12 lg:w-9 mr-4"/>
                 Company overview
             </h1>
             <!-- Datepicker -->
-            <div class="ml-auto flex flex-row items-center justify-center text-sm rounded-lg p-2 bg-white shadow text-gray-500 font-medium tracking-tight cursor-pointer">
+            <div class="mx-auto lg:mr-0 lg:mt-0 mt-4 flex flex-row items-center justify-center text-sm rounded-lg p-2 bg-white shadow text-gray-500 font-medium tracking-tight cursor-pointer">
                 <img src="/icons/calendar.svg" class="w-4 h-auto opacity-50 hover:opacity-60 mr-2"/>
                 <span class="hover:text-indigo-600 mr-2">Nov 16 2020</span> - <span class="ml-2 hover:text-indigo-600">Dec 15, 2020</span>
             </div>
         </div>
         <!-- Content row -->
-        <div class="flex flex-row items-start justify-start py-10 w-full">
+        <div class="flex flex-col lg:flex-row items-start justify-start py-10 w-full">
             <!-- Metrics section -->
             <div class="w-full lg:w-2/3 flex-col items-center justify-center space-y-4">
                 <div class="flex flex-col lg:flex-row items-center justify-start space-y-4 lg:space-y-0 flex-wrap">
-                    <div v-cloak="stripe_data" v-for="metric in stripe_data" class="flex flex-col w-full lg:w-1/2 pb-4 pr-4">
-                        <div class="flex flex-col rounded-lg bg-white p-4 space-y-3 flex-grow shadow">
+                    <div v-cloak="stripe_data" v-for="metric in stripe_data" class="flex flex-col w-full lg:w-1/2 pb-4 lg:pr-4">
+                        <div class="flex flex-col rounded-lg bg-white p-4 space-y-2 lg:space-y-3 flex-grow shadow">
                             <span class="text-gray-400 font-medium">{{ metric.title }}</span>
-                            <div class="flex flex-row items-end justify-center">
-                                <span class="text-gray-900 text-xl font-semibold mr-2" v-if="metric.dataset && metric.dataset.length > 0">{{ metric.dataset[metric.dataset.length-1].toLocaleString('en-US', {style: 'currency',currency: 'USD' }).slice(0, -3) }}</span>
-                                <span class="text-gray-400 text-sm font-medium mr-2">from {{ metric.dataset[0].toLocaleString('en-US', {style: 'currency',currency: 'USD' }).slice(0, -3) }}</span>
+                            <div class="flex lg:flex-row items-center justify-center">
+                                <div class="flex flex-col lg:flex-row items-start lg:items-end justify-center">
+                                    <span class="text-gray-900 text-lg lg:text-xl font-semibold mr-2" v-if="metric.dataset && metric.dataset.length > 0">{{ metric.dataset[metric.dataset.length-1].toLocaleString('en-US', {style: 'currency',currency: 'USD' }).slice(0, -3) }}</span>
+                                    <span class="text-gray-400 text-sm font-medium mr-2">from {{ metric.dataset[0].toLocaleString('en-US', {style: 'currency',currency: 'USD' }).slice(0, -3) }}</span>
+                                </div>
                                 <div class="ml-auto flex flex-row items-center justify-center space-x-2">
                                     <div class="w-2 h-2 rounded-full bg-green-400"></div>
-                                    <span class="text-green-400 font-medium text-lg">{{ (((metric.dataset[metric.dataset.length-1] / metric.dataset[0]) - 1) * 100).toFixed(2) }} %</span>
+                                    <span class="text-green-400 font-medium text-sm lg:text-lg">{{ (((metric.dataset[metric.dataset.length-1] / metric.dataset[0]) - 1) * 100).toFixed(2) }} %</span>
                                 </div>
                             </div>
-                            <line-chart class="w-full" :data="lineChartData" :options="lineChartOptions" :height="150" />
+                            <line-chart class="w-full" :data="lineChartData" :options="lineChartOptions" :height="200" />
                         </div>
                     </div>
                 </div>
-                <div class="p-4 opacity-0">placeholder</div>
+                <div class="p-4 opacity-0 hidden lg:flex">placeholder</div>
             </div>
             <!-- Breakdown section -->
             <div class="w-full lg:w-1/3 flex flex-col items-center justify-center space-y-4">
@@ -64,12 +66,13 @@
                             <option>Cancellations</option>
                         </select>
                     </div>
-                    <div class="w-full p-4 border border-gray-200 flex flex-row items-center justify-center border-l-0 border-r-0 border-t-0">
+                    <div v-for="event in live_stream" class="w-full p-4 border border-gray-200 flex flex-row items-center justify-center border-l-0 border-r-0 border-t-0">
                         <div class="w-2 h-2 bg-red-400 rounded-full mr-4"></div>
-                        <p class="text-gray-400 text-sm">US$49 payment failed by <span class="cursor-pointer text-indigo-600 hover:underline">Company Inc.</span></p>
-                        <span class="text-xs text-gray-400 ml-auto">22mins ago</span>
+                        <p class="text-gray-400 text-sm">US${{ event.amount }} payment {{ event.status }} by <span class="cursor-pointer text-indigo-600 hover:underline">{{ event.customer }}</span></p>
+                        <span class="text-xs text-gray-400 ml-auto">{{ event.timestamp }} ago</span>
                     </div>
                 </div>
+                <div class="flex lg:hidden p-10 opacity-0">placeholder</div>
             </div>
         </div>
     </div>
@@ -184,7 +187,15 @@ export default {
                         dataset: [24663,25554],
                         format: 'USD'
                     }
-                ]
+            ],
+            live_stream: [
+                {
+                    amount: 49,
+                    customer: 'Company Inc.',
+                    status: 'failed',
+                    timestamp: '22m'
+                }
+            ]
         }
     },
     head: {
