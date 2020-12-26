@@ -1,13 +1,31 @@
 <template>
   <div>
     <section class="flex flex-col items-center justify-center w-full p-8 lg:py-20 text-center">
-      <div class="flex flex-col w-full max-w-6xl items-center justify-center">
+      <div class="flex flex-col w-full max-w-7xl items-center justify-center">
         <nav class="flex flex-row items-center justify-start w-full max-w-7xl mb-24">
           <img src="/Icon Bare@2x.png" class="w-8 h-auto mr-3">
           <span class="text-2xl font-bold text-gray-900">Cowlytics</span>
         </nav>
-        <h1 class="text-5xl lg:text-6xl font-extrabold max-w-3xl text-gray-900 mb-6">Good data & good decisions made simple</h1>
-        <p class="max-w-4xl text-xl lg:text-2xl text-gray-500 mb-6">Meet Cowlytics, the open-source analytics & forecasting tool that provides automated insights alongside your real-time formatted data to help you make intelligent decisions with predictable results for your subscription business.</p>
+        <h1 class="text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 flex flex-row items-center justify-center flex-wrap">
+          Forecast my 
+          <select class="font-extrabold mx-4 text-indigo-600 cursor-pointer">
+            <option class="text-base flex font-medium capitalize text-gray-600">subscribers</option>
+            <option class="text-base flex font-medium capitalize text-gray-600">revenue</option>
+            <option class="text-base flex font-medium capitalize text-gray-600">cash flow</option>
+            <option class="text-base flex font-medium capitalize text-gray-600">users</option>
+            <option class="text-base flex font-medium capitalize text-gray-600">retention</option>
+         </select>
+          in
+          <select class="font-extrabold ml-4 text-indigo-600 cursor-pointer">
+            <option class="text-base flex font-medium capitalize text-gray-600">30 days</option>
+            <option class="text-base flex font-medium capitalize text-gray-600">90 days</option>
+            <option class="text-base flex font-medium capitalize text-gray-600">6 months</option>
+            <option class="text-base flex font-medium capitalize text-gray-600">1 year</option>
+          </select>
+          </h1>
+        <!--<h1 class="text-5xl lg:text-6xl font-extrabold max-w-3xl text-gray-900 mb-6">Good data & good decisions made simple</h1>-->
+        <p class="max-w-4xl text-xl lg:text-2xl text-gray-500 mb-6 italic">Doesn't that sound nice?</p>
+        <p class="max-w-4xl text-xl lg:text-2xl text-gray-500 mb-6" style="line-height:150%;">Meet Cowlytics, the open-source analytics & forecasting tool that provides automated insights alongside your real-time formatted data to help you make intelligent decisions with predictable results for your subscription business.</p>
         <div class="pb-8 lg:pb-0 flex flex-col lg:flex-row items-center justify-center mb-12 space-y-4 lg:space-y-0 lg:space-x-4" v-if="launched">
           <a class="lg:w-auto w-full shadow px-8 py-5 font-semibold bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 active:ring-4 ring-indigo-600 ring-opacity-50" href="https://app.cowlytics.co/users/create-account">Start your 14 day free trial</a>
           <a class="lg:w-auto w-full shadow px-8 py-5 font-semibold bg-gray-100 text-indigo-600 rounded-lg hover:bg-gray-200 active:ring-4 ring-indigo-600 ring-opacity-50" href="https://app.cowlytics.co/users/login">Sign in</a>
