@@ -64,7 +64,7 @@
       <div class="flex flex-col w-full max-w-6xl items-center justify-center">
         <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6">Simple fixed pricing</h2>
         <p class="max-w-4xl text-xl text-gray-500 mb-12">Import your Stripe account, invite your team, and get going in seconds.</p>
-        <div class="flex flex-col lg:flex-row w-full rounded-lg shadow-lg overflow-hidden mb-32">
+        <div class="flex flex-col lg:flex-row w-full rounded-lg shadow-lg overflow-hidden mb-4 lg:mb-0">
           <div class="flex flex-col w-full lg:w-3/4 p-12 text-left">
             <h3 class="text-2xl font-bold mb-2 text-gray-900 w-full">Everything included for one fixed price.</h3>
             <p class="text-lg leading-relaxed text-gray-500 mb-6">At Cowlytics, we belive pricing should be simple and scale friendly. That's why Cloudlytics Cloud is an unmetered fixed price no matter your revenue or team size, and Cloudlytics self-hosted is open-source & forever free.</p>
@@ -112,6 +112,10 @@
             <a v-if="launched" class="text-sm font-semibold w-full text-white bg-indigo-600 hover:bg-indigo-500 text-center py-4 px-6 rounded-lg" href="https://app.cowlytics.co/users/create-account">Start your free trial</a>
             <a v-if="!launched" class="text-sm font-semibold w-full text-white bg-indigo-600 hover:bg-indigo-500 text-center py-4 px-6 rounded-lg" href="https://www.producthunt.com/upcoming/cowlytics">Join the waitlist</a>
           </div>
+        </div>
+        <div class="border border-gray-200 bg-white shadow-xl z-10 flex flex-col lg:flex-row items-center justify-center p-4 rounded-lg mb-32" style="margin-top:-30px;">
+          <span class="text-indigo-600 font-semibold mb-1 lg:mb-0 lg:mr-2">Small Business Notice:</span>
+          Cowlytics is free under $500 MRR & discounted until $1000 MRR!
         </div>
         <div class="flex flex-col w-full text-left">
           <h2 class="text-3xl font-extrabold text-gray-900 py-6 border-2 border-gray-200 border-t-0 border-l-0 border-r-0 w-full text-left">Frequently asked questions</h2>
