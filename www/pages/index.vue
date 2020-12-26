@@ -6,11 +6,14 @@
           <img src="/Icon Bare@2x.png" class="w-8 h-auto mr-3">
           <span class="text-2xl font-bold text-gray-900">Cowlytics</span>
         </nav>
-        <h1 class="text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6">Simply SaaS Analytics.</h1>
-        <p class="max-w-4xl text-xl lg:text-2xl text-gray-500 mb-6">Make intelligent decisions with automated insights for your subscription product from Cowlytics, the open-source subscription metrics & forecasting tool for Stripe powered SaaS businesses.</p>
-        <div class="pb-8 lg:pb-0 flex flex-col lg:flex-row items-center justify-center mb-12 space-y-4 lg:space-y-0 lg:space-x-4">
-          <a class="lg:w-auto w-full shadow px-8 py-5 font-semibold bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 active:ring-4 ring-indigo-600 ring-opacity-50" href="#">Start your 14 day free trial</a>
-          <a class="lg:w-auto w-full shadow px-8 py-5 font-semibold bg-gray-100 text-indigo-600 rounded-lg hover:bg-gray-200 active:ring-4 ring-indigo-600 ring-opacity-50" href="#">Sign in</a>
+        <h1 class="text-5xl lg:text-6xl font-extrabold max-w-3xl text-gray-900 mb-6">Good data & good decisions made simple</h1>
+        <p class="max-w-4xl text-xl lg:text-2xl text-gray-500 mb-6">Meet Cowlytics, the open-source analytics & forecasting tool that provides automated insights alongside your real-time formatted data to help you make intelligent decisions with predictable results for your subscription business.</p>
+        <div class="pb-8 lg:pb-0 flex flex-col lg:flex-row items-center justify-center mb-12 space-y-4 lg:space-y-0 lg:space-x-4" v-if="launched">
+          <a class="lg:w-auto w-full shadow px-8 py-5 font-semibold bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 active:ring-4 ring-indigo-600 ring-opacity-50" href="https://app.cowlytics.co/users/create-account">Start your 14 day free trial</a>
+          <a class="lg:w-auto w-full shadow px-8 py-5 font-semibold bg-gray-100 text-indigo-600 rounded-lg hover:bg-gray-200 active:ring-4 ring-indigo-600 ring-opacity-50" href="https://app.cowlytics.co/users/login">Sign in</a>
+        </div>
+        <div class="pb-8 lg:pb-0 flex flex-col lg:flex-row items-center justify-center mb-12 space-y-4 lg:space-y-0 lg:space-x-4" v-if="!launched">
+          <a class="lg:w-auto w-full shadow px-8 py-5 font-semibold bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 active:ring-4 ring-indigo-600 ring-opacity-50" href="#">Join the waitlist on ProductHunt</a>
         </div>
         <img class="rounded overflow-hidden shadow-lg" src="/Application Screenshot.png"/>
       </div>
@@ -27,7 +30,7 @@
         </div>
       </div>
     </section>
-    <section class="bg-gray-700 flex flex-col lg:flex-row items-center justify-center w-screen">
+    <!--<section class="bg-gray-700 flex flex-col lg:flex-row items-center justify-center w-screen">
         <div class="flex flex-col lg:flex-row w-full max-w-6xl items-center justify-center">
           <div class="flex flex-col w-full lg:w-1/2 p-16 border border-gray-600 border-l-0 border-t-0 border-b-0">
             <img class="w-24 mb-4 opacity-50" style="filter:grayscale(1) invert(1) brightness(100);" src="https://summit-cfo.s3.amazonaws.com/static/images/vendors/chartmogul_logo.svg"/>
@@ -56,7 +59,7 @@
             </div>
           </div>
         </div>
-    </section>
+    </section>-->
     <section class="flex flex-col items-center justify-center w-full p-8 py-16 lg:py-32 text-center">
       <div class="flex flex-col w-full max-w-6xl items-center justify-center">
         <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6">Simple fixed pricing</h2>
@@ -106,7 +109,8 @@
             </div>
             <span class="text-gray-500 font-medium text-sm mb-6">per month</span>
             <span class="text-xs text-gray-500 mb-6">Unlimited everything, no catch.</span>
-            <a class="text-sm font-semibold w-full text-white bg-indigo-600 hover:bg-indigo-500 text-center py-4 px-6 rounded-lg" href="#">Start your free trial</a>
+            <a v-if="launched" class="text-sm font-semibold w-full text-white bg-indigo-600 hover:bg-indigo-500 text-center py-4 px-6 rounded-lg" href="https://app.cowlytics.co/users/create-account">Start your free trial</a>
+            <a v-if="!launched" class="text-sm font-semibold w-full text-white bg-indigo-600 hover:bg-indigo-500 text-center py-4 px-6 rounded-lg" href="https://www.producthunt.com/upcoming/cowlytics">Join the waitlist</a>
           </div>
         </div>
         <div class="flex flex-col w-full text-left">
@@ -192,7 +196,8 @@
           <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 lg:mb-2 lg:mb-6">Ready to get started?</h2>
           <p class="lg:text-lg text-gray-500 mb-6 lg:mb-0">Import your Stripe account, invite your team, and get going in seconds.</p>
         </div>
-        <a class="text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 text-center py-4 px-6 rounded-lg" href="#">Start your free trial</a>
+        <a v-if="launched" class="text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 text-center py-4 px-6 rounded-lg" href="https://app.cowlytics.co/users/create-account">Start your free trial</a>
+        <a v-if="!launched" class="text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 text-center py-4 px-6 rounded-lg" href="https://www.producthunt.com/upcoming/cowlytics">Join the waitlist</a>
       </div>
     </section>
   </div>
@@ -211,3 +216,13 @@
     }
   }
 </style>
+
+<script>
+export default {
+  data: () => {
+    return {
+      launched: false
+    }
+  }
+}
+</script>
