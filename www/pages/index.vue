@@ -20,7 +20,7 @@
           <a class="lg:w-auto w-full shadow px-8 py-5 font-semibold bg-gray-100 text-indigo-600 rounded-lg hover:bg-gray-200 active:ring-4 ring-indigo-600 ring-opacity-50" href="https://app.cowlytics.co/users/login">Sign in</a>
         </div>
         <div class="pb-8 lg:pb-0 flex flex-col lg:flex-row items-center justify-center mb-12 space-y-4 lg:space-y-0 lg:space-x-4" v-if="!launched">
-          <a class="lg:w-auto w-full shadow px-8 py-5 font-semibold bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 active:ring-4 ring-indigo-600 ring-opacity-50" href="#">Join the waitlist on ProductHunt</a>
+          <a class="lg:w-auto w-full shadow px-8 py-5 font-semibold bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 active:ring-4 ring-indigo-600 ring-opacity-50" href="https://www.producthunt.com/upcoming/cowlytics">Join our waitlist on ProductHunt</a>
         </div>
         <img class="rounded overflow-hidden shadow-lg" src="/Application Screenshot.png"/>
       </div>
@@ -115,7 +115,7 @@
             <span class="text-gray-500 font-medium text-sm mb-6">per month, paid annually</span>
             <span class="text-xs text-gray-500 mb-6">$35/Month if paid monthly</span>
             <a v-if="launched" class="text-sm font-semibold w-full text-white bg-indigo-600 hover:bg-indigo-500 text-center py-4 px-6 rounded-lg" href="https://app.cowlytics.co/users/create-account">Start your free trial</a>
-            <a v-if="!launched" class="text-sm font-semibold w-full text-white bg-indigo-600 hover:bg-indigo-500 text-center py-4 px-6 rounded-lg" href="https://www.producthunt.com/upcoming/cowlytics">Join the waitlist</a>
+            <a v-if="!launched" class="text-sm font-semibold w-full text-white bg-indigo-600 hover:bg-indigo-500 text-center py-4 px-6 rounded-lg" href="https://www.producthunt.com/upcoming/cowlytics">Join our waitlist</a>
           </div>
         </div>
         <div class="border border-gray-200 bg-white shadow-xl text-lg font-medium text-gray-600 z-10 flex flex-col lg:flex-row items-center justify-center p-4 rounded-lg mb-12" style="margin-top:-30px;">
@@ -124,78 +124,12 @@
         </div>
         <a href="https://github.com/Neutron-Creative/Cowlytics" class="text-sm text-gray-500 hover:underline mb-20">Looking for the free, self-hosted version - Cowlytics Core?</a>
         <div class="flex flex-col w-full text-left">
-          <h2 class="text-3xl font-extrabold text-gray-900 py-6 border-2 border-gray-200 border-t-0 border-l-0 border-r-0 w-full text-left">Frequently asked questions</h2>
-          <div class="flex flex-col lg:flex-row border border-gray-200 border-l-0 border-t-0 border-r-0">
+          <h2 class="text-3xl font-extrabold text-gray-900 py-6 border border-gray-200 border-t-0 border-l-0 border-r-0 w-full text-left">Frequently asked questions</h2>
+          <div v-for="q in faq" class="flex flex-col lg:flex-row border border-gray-200 border-l-0 border-b-0 border-r-0">
             <div class="flex flex-col w-full lg:w-1/3 p-8 pb-2 lg:pb-8 font-medium text-gray-800">
-              How does Cowlytics work?
+              {{ q.question }}
             </div>
-            <div class="flex flex-col w-full lg:w-2/3 p-8 pt-2 lg:pt-8 text-gray-500 leading-relaxed">
-              Cloudlytics Cloud is a simple & easy to use product that requires little-no configuration on your end to get up and running. To being, create your free account and link your Stripe through the onboarding as follows. Afterwhich, enjoy your new connected profile!
-            </div>
-          </div>
-           <div class="flex flex-col lg:flex-row border border-gray-200 border-l-0 border-t-0 border-r-0">
-            <div class="flex flex-col w-full lg:w-1/3 p-8 pb-2 lg:pb-8 font-medium text-gray-800">
-              Why did you build Cowlytics?
-            </div>
-            <div class="flex flex-col w-full lg:w-2/3 p-8 pt-2 lg:pt-8 text-gray-500 leading-relaxed">
-              We built Cowlytics as a rapid response one night when we heard about a rather greedy competitor in the market requiring your to personally video call one of their staff members (Brian) just to stop billing on your account. We realized how easy it would be to make ourselves and host at a more fair price - so we did.
-            </div>
-          </div>
-          <div class="flex flex-col lg:flex-row border border-gray-200 border-l-0 border-t-0 border-r-0">
-            <div class="flex flex-col w-full lg:w-1/3 p-8 pb-2 lg:pb-8 font-medium text-gray-800">
-              How can I use Cowlytics to improve my SaaS?
-            </div>
-            <div class="flex flex-col w-full lg:w-2/3 p-8 pt-2 lg:pt-8 text-gray-500 leading-relaxed">
-              Cowlytics monitors & learns from your businesses Stripe data in order to provided automated insights and make intelligent suggestions for your business targeting specific SaaS metrics. By further understanding your subscription specific metrics and using what's already worked to further improve them, you can quickly make large strides with Cowlytics.
-            </div>
-          </div>
-           <div class="flex flex-col lg:flex-row border border-gray-200 border-l-0 border-t-0 border-r-0">
-            <div class="flex flex-col w-full lg:w-1/3 p-8 pb-2 lg:pb-8 font-medium text-gray-800">
-              How do I know if Cowlytics is right for me?
-            </div>
-            <div class="flex flex-col w-full lg:w-2/3 p-8 pt-2 lg:pt-8 text-gray-500 leading-relaxed">
-              Cowlytics was built from the ground up for monthly subscription SaaS businesses built ith Stripe looking to better understand & improve the economics & metrics of their subscription business. If that sounds like you, we'd love to have you!
-            </div>
-          </div>
-          <div class="flex flex-col lg:flex-row border border-gray-200 border-l-0 border-t-0 border-r-0">
-            <div class="flex flex-col w-full lg:w-1/3 p-8 pb-2 lg:pb-8 font-medium text-gray-800">
-              Why does this feel like I've used this before?
-            </div>
-            <div class="flex flex-col w-full lg:w-2/3 p-8 pt-2 lg:pt-8 text-gray-500 leading-relaxed">
-              When building open-source product alternatives at Neutron Creative, we often intentionally build the UI/UX to be similar to the original inspiration to help ease users into our software with little-no onboarding/learning curve. Usually after we reach version 2 of the software, you'll see significant UI/UX changes & improvements.
-            </div>
-          </div>
-          <div class="flex flex-col lg:flex-row border border-gray-200 border-l-0 border-t-0 border-r-0">
-            <div class="flex flex-col w-full lg:w-1/3 p-8 pb-2 lg:pb-8 font-medium text-gray-800">
-              What's the difference between Cowlytics Cloud & Cowlytics Core?
-            </div>
-            <div class="flex flex-col w-full lg:w-2/3 p-8 pt-2 lg:pt-8 text-gray-500 leading-relaxed">
-              Cowlytics Cloud is the $30/month managed Cowlytics service as provided at cowlytics.neutron.so, whereas Cowlytics self-hosted is the free open-source software powering Cowlytics that is widely available to use, modify, and host for yourself on a VPS provider such as DigitalOcean.
-            </div>
-          </div>
-          <div class="flex flex-col lg:flex-row border border-gray-200 border-l-0 border-t-0 border-r-0">
-            <div class="flex flex-col w-full lg:w-1/3 p-8 pb-2 lg:pb-8 font-medium text-gray-800">
-              Should I use Cowlytics Cloud, Cowlytics Core, or Cowlytics Enterprise?
-            </div>
-            <div class="flex flex-col w-full lg:w-2/3 p-8 pt-2 lg:pt-8 text-gray-500 leading-relaxed">
-              Cowlytics Cloud is the managed hosting version of Cowlytics Cloud for organizations needing improved security, zero hassle/server setup, sixty second onboarding, and reliable customer support - whereas Cloudlytics is the free & open-source alternative for businesses looking to use, modify, and distribute their own versions of Cowlytics independently. Looking to have Cowlytics modified to your needs but don't want to deal with the hassle? Cowlytics Enterprise is best for you, with managed independent instances of Cowlytics running your unique fork & software customized to your needs. 
-            </div>
-          </div>
-          <div class="flex flex-col lg:flex-row border border-gray-200 border-l-0 border-t-0 border-r-0">
-            <div class="flex flex-col w-full lg:w-1/3 p-8 pb-2 lg:pb-8 font-medium text-gray-800">
-              What's your refund policy?
-            </div>
-            <div class="flex flex-col w-full lg:w-2/3 p-8 pt-2 lg:pt-8 text-gray-500 leading-relaxed">
-              If you don't love our software - we'll give you your money back with no questions asked within 30 days of purchase. Outside that window? Just send us an email at support@neutroncreative.com and we'd be happy to take a look.
-            </div>
-          </div>
-          <div class="flex flex-col lg:flex-row border border-gray-200 border-l-0 border-t-0 border-r-0">
-            <div class="flex flex-col w-full lg:w-1/3 p-8 pb-2 lg:pb-8 font-medium text-gray-800">
-              Do you offer any discounts (student, open-source, etc.)?
-            </div>
-            <div class="flex flex-col w-full lg:w-2/3 p-8 pt-2 lg:pt-8 text-gray-500 leading-relaxed">
-              If you truly believe you could benefit from our software but can't find any room in your budget - reach out with some context and we'll work something out. We're big advocates for software accessiblity and want to ensure our software is available for all, but need to bill all able members the full price as consistently as possible in able to afford other members the oppurtunity to use our software free.
-            </div>
+            <p v-html="q.answer" class="w-full lg:w-2/3 p-8 pt-2 lg:pt-8 text-gray-500 leading-relaxed"></p>
           </div>
         </div>
       </div>
@@ -207,13 +141,16 @@
           <p class="lg:text-lg text-gray-500 mb-6 lg:mb-0">Import your Stripe account, invite your team, and get going in seconds.</p>
         </div>
         <a v-if="launched" class="text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 text-center py-4 px-6 rounded-lg" href="https://app.cowlytics.co/users/create-account">Start your free trial</a>
-        <a v-if="!launched" class="text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 text-center py-4 px-6 rounded-lg" href="https://www.producthunt.com/upcoming/cowlytics">Join the waitlist</a>
+        <a v-if="!launched" class="text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 text-center py-4 px-6 rounded-lg" href="https://www.producthunt.com/upcoming/cowlytics">Join our waitlist</a>
       </div>
     </section>
   </div>
 </template>
 
 <style scoped>
+  .a:hover {
+    text-decoration: underline;
+  }
   .overlay-container {
     margin-top:-800px;
     padding-top: 790px;
@@ -231,7 +168,41 @@
 export default {
   data: () => {
     return {
-      launched: false
+      launched: false,
+      faq: [
+        {
+          question: 'How does Cowlytics work?',
+          answer: 'Cowlytics monitors & learns from your businesses Stripe data in order to provided automated insights and make intelligent suggestions for your business targeting specific SaaS metrics. By further understanding your subscription specific metrics and using what\'s already worked to further improve them, you can quickly implement, monitor, and adjust to find increased success with Cowlytics.'
+        },
+        {
+          question: 'That sounds challenging - do I have to be experienced to use Cowlytics?',
+          answer: 'Absolutely not! Cowlytics was built to be easy to learn from the ground up. There\'s plenty of advanced settings & extensibility for power users looking to go further - but Cowlytics by default assumes you\'re starting from scratch.'
+        },
+        {
+          question: 'How does pricing work?',
+          answer: 'Cowlytics is free for all businesses with under $500/mo in MRR (monthly recurring revenue), and 50% off for those under $1,000 MRR. After which, Cowlytics costs a flat rate of $35/mo ($30/mo paid annually). Discounts are automatically applied based on your Stripe data.'
+        },
+        {
+          question: 'Can I invite my team?',
+          answer: 'Yes! You can add additional team members for free at any time under settings.'
+        },
+        {
+          question: 'Do I have to install or host it?',
+          answer: 'Not with Cowlytics Cloud! <a style="font-weight:500;color:#5353EC;" href="https://cowlytics.co">Cowlytics Cloud</a> is our managed & hosted offering of <a style="font-weight:500;color:#5353EC;" href="https://github.com/Neutron-Creative/Cowlytics">Cowlytics Core</a>, with managed hosting, quick & reliable support, and 60 second onboarding.'
+        },
+        {
+          question: 'How are you different from other Stripe metric/forecasting providers?',
+          answer: 'Cowlytics was built from the ground up for open-source. Licensed with GPL, you can vet our source code personally to verify our application is safe & secure, you can modify & self-host the application if needed, and help build & shape the future of Cowlytics together with our wonderful open-source community.<br><br><a style="text-decoration:underline;font-weight:500;color:#5353EC;" href="https://twitter.com/cmdkhalilov/status/1341462579680587778">Plus, we\'ll never do awful things like make you video call Brian to cancel.</a>',
+        },
+        {
+          question: 'What if I need help/support?',
+          answer: 'Our team is avaiilable 24/7 on our <a href="https://discord.com/invite/3pBM4Px" style="font-weight:500;color:#5353EC;">community Discord</a>, as well as from 9AM-5PM Monday-Friday via Email, Phone, and Github. No matter how big or small your issue, we\'re always happy to help!'
+        },
+        {
+          question: 'Who made Cowlytics?',
+          answer: 'Cowlytics is a product of Neutron Creative Inc. - a small team of coding cowboys on a mission to make the world open-source. Based in Raleigh, North Carolina - we enjoy building & sharing software consumers love with our passionate open-source community.<br><br><a href="https://neutroncreative.com" style="font-weight:500;color:#5353EC;">Learn more about us at neutroncreative.com</a>'
+        }
+      ]
     }
   }
 }
