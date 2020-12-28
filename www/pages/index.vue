@@ -29,9 +29,9 @@
       <div class="flex flex-col w-full max-w-6xl items-center justify-center">
         <h3 class="text-gray-400 uppercase tracking-wide font-semibold mb-8">Monitor your SaaS performance from</h3>
         <div class="flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-12">
-          <img title="Coming soon" class="w-24 h-auto opacity-50" style="filter:grayscale(1);" src="/chargebee.svg"/>
+          <!--<img title="Coming soon" class="w-24 h-auto opacity-50" style="filter:grayscale(1);" src="/chargebee.svg"/>-->
           <img title="Stripe integration now available" class="w-24 h-auto" src="/stripe.svg"/>
-          <img title="Coming soon" class="w-24 h-auto opacity-50" style="filter:grayscale(1);" src="/recurly.svg"/>
+          <!--<img title="Coming soon" class="w-24 h-auto opacity-50" style="filter:grayscale(1);" src="/recurly.svg"/>-->
         </div>
       </div>
     </section>
