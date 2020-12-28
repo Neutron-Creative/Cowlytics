@@ -2,20 +2,9 @@
     <!-- Container -->
     <div class="flex flex-col w-full h-screen lg:px-0 py-12">
         <!-- Header row -->
-        <div class="flex flex-col lg:flex-row items-center justify-center pt-8 lg:pt-0">
-            <!-- Page header -->
-            <h1 class="flex flex-col lg:flex-row items-center justify-center text-center mr-0 lg:text-left text-2xl font-semibold text-gray-900 flex flex-row lg:mr-auto items-center justify-start">
-                <img src="https://neutroncreative.com/favicon.ico" class="mb-4 lg:mb-0 rounded-full w-12 lg:w-9 mr-4"/>
-                Company overview
-            </h1>
-            <!-- Datepicker -->
-            <div class="mx-auto lg:mr-0 lg:mt-0 mt-4 flex flex-row items-center justify-center text-sm rounded-lg p-2 bg-white shadow text-gray-500 font-medium tracking-tight cursor-pointer">
-                <img src="/icons/calendar.svg" class="w-4 h-auto opacity-50 hover:opacity-60 mr-2"/>
-                <span class="hover:text-indigo-600 mr-2">Nov 16 2020</span> - <span class="ml-2 hover:text-indigo-600">Dec 15, 2020</span>
-            </div>
-        </div>
+        <profile-header label="Company overview" :datepicker="true"/>
         <!-- Content row -->
-        <div class="flex flex-col lg:flex-row items-start justify-start py-10 w-full">
+        <div class="flex flex-col lg:flex-row items-start justify-start w-full">
             <!-- Metrics section -->
             <div class="w-full lg:w-2/3 flex-col items-center justify-center space-y-4">
                 <div class="flex flex-col lg:flex-row items-center justify-start space-y-4 lg:space-y-0 flex-wrap">
@@ -78,7 +67,9 @@
     </div>
 </template>
 <script>
+import ProfileHeader from '../components/ProfileHeader.vue';
 export default {
+  components: { ProfileHeader },
     layout: 'profile',
     data: () => {
         return {

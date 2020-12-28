@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col lg:flex-row items-center justify-center w-screen h-screen">
+  <div class="flex flex-col lg:flex-row items-center justify-start lg:justify-center lg:items-start w-screen h-screen">
     <div class="fixed z-10 shadow-lg top-0 left-0 bg-white flex-row lg:flex-col p-3 lg:px-5 lg:py-4 lg:pt-12 items-center justify-start lg:space-y-4 lg:h-screen w-screen lg:w-auto lg:mr-auto text-gray-400" style="display:flex !important;font-size:9px;">
       
       <n-link to="/"><img title="Cowlytics by Neutron Creative" class="icon cursor-pointer rounded-lg bg-indigo-100 lg:mb-4 flex flex-row items-center justify-center" src="/Favicon@2x.png"/></n-link>
@@ -42,12 +42,12 @@
             <span class="icon-label">Customers</span>
             </div>
           </n-link>
-          <n-link to="/compare" class="p-2 lg:p-0 hover:bg-gray-100 flex flex-row lg:flex-col items-center justify-center space-x-2 lg:space-x-0 lg:space-y-2">
+          <n-link to="/leaderboard" class="p-2 lg:p-0 hover:bg-gray-100 flex flex-row lg:flex-col items-center justify-center space-x-2 lg:space-x-0 lg:space-y-2">
             <div class="space-x-2 lg:space-x-0 lg:space-y-2 w-full flex flex-row lg:flex-col items-center justify-center" style="max-width:120px">
               <div class="mini-icon flex items-center justify-center rounded-lg bg-green-100 border border-2 border-white hover:border-green-200 hover:bg-green-200 cursor-pointer">
                 <img class="w-4 h-auto" src="/icons/compare.svg"/>
               </div>
-              <span class="icon-label">Compare</span>
+              <span class="icon-label">Leaderboard</span>
             </div>
           </n-link>
           <div class="hidden lg:flex text-2xs mb-2 text-gray-400 text-center hover:underline cursor-pointer" style="width:38px;margin-top:auto !important;">9 days left</div>
@@ -95,12 +95,12 @@
             <span class="icon-label">Customers</span>
             </div>
           </n-link>
-          <n-link to="/compare" class="p-2 lg:p-0 hover:bg-gray-100 flex flex-row lg:flex-col items-center justify-center space-x-2 lg:space-x-0 lg:space-y-2">
+          <n-link to="/leaderboard" class="p-2 lg:p-0 hover:bg-gray-100 flex flex-row lg:flex-col items-center justify-center space-x-2 lg:space-x-0 lg:space-y-2">
             <div class="space-x-2 lg:space-x-0 lg:space-y-2 w-full flex flex-row lg:flex-col items-center justify-center" style="max-width:120px">
               <div class="mini-icon flex items-center justify-center rounded-lg bg-green-100 border border-2 border-white hover:border-green-200 hover:bg-green-200 cursor-pointer">
                 <img class="w-4 h-auto" src="/icons/compare.svg"/>
               </div>
-              <span class="icon-label">Compare</span>
+              <span class="icon-label">Leaderboard</span>
             </div>
           </n-link>
           <div class="hidden lg:flex text-2xs mb-2 text-gray-400 text-center hover:underline cursor-pointer" style="width:38px;margin-top:auto !important;">9 days left</div>
@@ -117,7 +117,7 @@
       </div>
     </div>
         <div class="flex flex-col max-w-8xl mx-auto w-10/12 relative">
-          <Nuxt/>
+          <Nuxt class="flex flex-col w-full lg:py-12 py-24 lg:px-4"/>
           <div class="banner flex flex-col lg:flex-row items-center justify-center w-full lg:w-10/12 max-w-8xl p-4 lg:rounded-lg bg-gray-800 fixed shadow-lg">
             <span class="text-white font-medium mb-1 lg:mb-0 lg:mr-2 text-sm">Cowlytics for Company Inc: </span>
             <span class="text-gray-400 text-sm lg:mb-0 mb-3">Get these metrics for your company!</span>

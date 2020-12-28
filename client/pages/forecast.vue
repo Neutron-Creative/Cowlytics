@@ -1,11 +1,6 @@
 <template>
-    <div class="flex flex-col w-full h-screen px-8 lg:px-0 py-12">
-        <div class="mb-12 flex flex-row items-center justify-center">
-            <h1 class="text-2xl font-semibold text-gray-900 flex flex-row mr-auto items-center justify-start">
-                <img src="https://neutroncreative.com/favicon.ico" class="rounded-full w-8 mr-4"/>
-                Forecasting
-            </h1>
-        </div>
+    <div>
+        <profile-header label="Forecasting"/>
         <div class="mb-6 flex flex-col lg:flex-row p-8 rounded-lg bg-white shadow lg:space-x-12">
             <div class="flex flex-col w-full lg:w-5/12">
                 <h2 class="text-lg text-gray-500 mb-4">Cash flow</h2>

@@ -1,37 +1,16 @@
 <template>
     <div class="flex flex-col w-full h-screen px-8 lg:px-0 py-12">
-        <div class="flex flex-row items-center justify-center">
-            <h1 class="text-2xl font-semibold text-gray-900 flex flex-row mr-auto items-center justify-start">
-                <img src="https://neutroncreative.com/favicon.ico" class="rounded-full w-8 mr-4"/>
-                Monthly recurring revenue
-            </h1>
-            <!-- Datepicker -->
-            <div class="ml-auto flex flex-row items-center justify-center text-sm rounded-lg p-2 bg-white text-gray-500 font-medium tracking-tight cursor-pointer">
-                <img src="/icons/calendar.svg" class="w-4 h-auto opacity-50 hover:opacity-60 mr-2"/>
-                <span class="hover:text-indigo-600 mr-2">Nov 16 2020</span> - <span class="ml-2 hover:text-indigo-600">Dec 15, 2020</span>
-            </div>
-        </div>
-        <div class="flex flex-row items-start justify-start py-10 w-full space-x-8">
+        <profile-header v-if="metric" :label="metric.label" :datepicker="true" />
+        <div class="flex flex-row items-start justify-start w-full space-x-8">
             <div class="w-full lg:w-1/6 flex flex-col items-start justify-center">
-                <h3 class="mb-2 uppercase tracking-wider font-semibold text-gray-500 text-xs">Revenue</h3>
-                <div class="w-full flex flex-col items-center justify-center space-y-1 mb-8">
-                    <n-link class="bg-indigo-600 text-white w-full p-2 font-medium rounded-lg text-xs" to="/metrics/mrr">Monthly recurring revenue</n-link>
-                    <n-link class="text-gray-500 w-full p-2 hover:bg-indigo-100 hover:text-indigo-600 font-medium rounded-lg text-xs" to="/metrics/mrr">Annual run rate</n-link>
-                    <n-link class="text-gray-500 w-full p-2 hover:bg-indigo-100 hover:text-indigo-600 font-medium rounded-lg text-xs" to="/metrics/mrr">Net revenue</n-link>
-                    <n-link class="text-gray-500 w-full p-2 hover:bg-indigo-100 hover:text-indigo-600 font-medium rounded-lg text-xs" to="/metrics/mrr">MRR growth rate</n-link>
-                    <n-link class="text-gray-500 w-full p-2 hover:bg-indigo-100 hover:text-indigo-600 font-medium rounded-lg text-xs" to="/metrics/mrr">Other revenue</n-link>
-                    <n-link class="text-gray-500 w-full p-2 hover:bg-indigo-100 hover:text-indigo-600 font-medium rounded-lg text-xs" to="/metrics/mrr">Quick ratio</n-link>
-                </div>
-                <h3 class="mb-2 uppercase tracking-wider font-semibold text-gray-500 text-xs">MRR Movements</h3>
-                <div class="w-full flex flex-col items-center justify-center space-y-1 mb-8">
-                    <n-link class="text-gray-500 w-full p-2 hover:bg-indigo-100 hover:text-indigo-600 font-medium rounded-lg text-xs" to="/metrics/mrr">Active subscriptions</n-link>
-                    <n-link class="text-gray-500 w-full p-2 hover:bg-indigo-100 hover:text-indigo-600 font-medium rounded-lg text-xs" to="/metrics/mrr">New subscriptions</n-link>
-                    <n-link class="text-gray-500 w-full p-2 hover:bg-indigo-100 hover:text-indigo-600 font-medium rounded-lg text-xs" to="/metrics/mrr">Plan quantities</n-link>
-                    <n-link class="text-gray-500 w-full p-2 hover:bg-indigo-100 hover:text-indigo-600 font-medium rounded-lg text-xs" to="/metrics/mrr">Upgrades</n-link>
-                    <n-link class="text-gray-500 w-full p-2 hover:bg-indigo-100 hover:text-indigo-600 font-medium rounded-lg text-xs" to="/metrics/mrr">Downgrades</n-link>
-                    <n-link class="text-gray-500 w-full p-2 hover:bg-indigo-100 hover:text-indigo-600 font-medium rounded-lg text-xs" to="/metrics/mrr">Failed charges</n-link>
-                    <n-link class="text-gray-500 w-full p-2 hover:bg-indigo-100 hover:text-indigo-600 font-medium rounded-lg text-xs" to="/metrics/mrr">Refunds</n-link>
-                    <n-link class="text-gray-500 w-full p-2 hover:bg-indigo-100 hover:text-indigo-600 font-medium rounded-lg text-xs" to="/metrics/mrr">Coupons redeemed</n-link>
+                <div v-for="category in metric_categories" :key="category.label" class="flex flex-col items-start justify-center flex w-full">
+                    <h3 class="mb-2 uppercase tracking-wider font-semibold text-gray-500 text-xs">{{ category.label }}</h3>
+                    <div class="w-full flex flex-col items-center justify-center space-y-1 mb-8">
+                        <div class="flex flex-col w-full" v-for="item in category.items" :key="item">
+                            <n-link v-if="item.replaceAll(' ', '-').toLowerCase() == active_category" class="bg-indigo-600 text-white w-full p-2 font-medium rounded-lg text-xs" :to="'/metrics/' + item.replaceAll(' ', '-').toLowerCase()">{{ item }}</n-link>
+                            <n-link v-if="item.replaceAll(' ', '-').toLowerCase() != active_category" class="text-gray-500 w-full p-2 hover:bg-indigo-100 hover:text-indigo-600 font-medium rounded-lg text-xs" :to="'/metrics/' + item.replaceAll(' ', '-').toLowerCase()">{{ item }}</n-link>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="w-full lg:w-5/6 flex flex-col items-start rounded-lg justify-center bg-white shadow">
@@ -44,7 +23,7 @@
                 </div>
                 <div class="flex flex-col lg:flex-row w-full p-6">
                     <div class="flex flex-col mr-4">
-                        <span class="uppercase text-gray-500 text-sm mb-2">MRR</span>
+                        <span class="uppercase text-gray-500 text-sm mb-2" v-if="metric">{{ metric.abbrv }}</span>
                         <span class="text-3xl font-semibold text-gray-900 mb-2">$242</span>
                         <div class="flex flex-row items-center justify-center text-sm text-gray-500">
                             <div class="w-4 h-4 rounded-full bg-green-100 mr-1"></div>
@@ -124,7 +103,10 @@
     </div>
 </template>
 <script>
+import ProfileHeader from '../../components/ProfileHeader.vue';
+import profile from '../../layouts/profile.vue';
 export default {
+  components: { profile, ProfileHeader },
     layout: 'profile',
     data: () => {
         return {
@@ -217,7 +199,105 @@ export default {
                     ]
                 }
             },
+            metric_categories: [],
+            active_category: null,
+            metric: null
         }
+    },
+    mounted() {
+        // Set active category
+        this.active_category = window.location.href.split('/').pop();
+
+        // Fetch metrics for display from API
+        this.fetch_categories();
+
+        // Fetch current category data from API
+        this.fetch_metrics();
+    },
+    methods: {
+       fetch_categories() {
+           this.metric_categories = [
+                {
+                    label: 'Revenue',
+                    items: [
+                        'Monthly recurring revenue',
+                        'Annual run rate',
+                        'Net revenue',
+                        'MRR Growth Rate',
+                        'Fees',
+                        'Other Revenue',
+                        'Quick Ratio'
+                    ]
+                },
+                {
+
+                    label: 'MRR Movements',
+                    items: [
+                        'Active Subscriptions',
+                        'New Subscriptions',
+                        'Plan Quantities',
+                        'Upgrades',
+                        'Downgrades',
+                        'Failed Charges',
+                        'Refunds',
+                        'Coupons Redeemed'
+                    ]
+                },
+                {
+                    label: 'Customer',
+                    items: [
+                        'Average Revenue Per User',
+                        'Lifetime Value',
+                        'New Customers',
+                        'Active Customers',
+                        'Churned Customers',
+                        'Reactivated Customers'
+                    ]
+                },
+                {
+                    label: 'Churn',
+                    items: [
+                        'User Churn',
+                        'Revenue Churn',
+                        'Net Revenue Churn',
+                        'Churned Subscriptions'
+                    ]
+                },
+                {
+                    label: 'Trial Insights',
+                    items: [
+                        'Trial Insights'
+                    ]
+                }
+            ];
+
+       },
+       fetch_metrics() {
+           // Fetch Metric data based on active_category
+
+           // Validate response
+
+           // Set metric value to response
+           this.metric = {
+               label: 'Monthly Recurring Revenue',
+               abbrv: 'MRR',
+               dataset: [
+                   1000,
+                   2000,
+                   3000,
+                   4000,
+                   5000,
+                   6000,
+                   7000,
+                   8000,
+                   9000,
+                   10000
+               ]
+           };
+
+           // Update graph dataset
+           this.lineChartData.datasets[0].data = this.metric.dataset;
+       }
     },
     head: {
         title: 'Monthly recurring revenue - Cowlytics'

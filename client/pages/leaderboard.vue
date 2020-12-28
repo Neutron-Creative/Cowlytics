@@ -1,21 +1,75 @@
 <template>
-    <div class="flex flex-col w-full h-screen px-8 lg:px-0 py-12">
-        <div class="mb-12 flex flex-row items-center justify-center">
-            <h1 class="text-2xl font-semibold text-gray-900 flex flex-row mr-auto items-center justify-start">
-                <img src="https://neutroncreative.com/favicon.ico" class="rounded-full w-8 mr-4"/>
-                Compare
-            </h1>
+    <div>
+        <profile-header label="Leaderboard"/>
+        <div class="flex-grow flex flex-col rounded-lg shadow bg-white">
+            <div class="flex flex-row items-center p-6">
+                <span class="text-xl font-semibold text-gray-900">Your standings</span>
+            </div>
+            <div class="flex flex-row items-center justify-start bg-indigo-100  text-sm text-indigo-400 border border-l-0 border-r-0  p-6 border-gray-100">
+                You are in the bottom 38% for all metrics compared to others in your cohort.
+            </div>
+            <div class="flex flex-col p-6">
+                <div v-if="metrics && metrics.length>0" v-for="metric in metrics" class="flex flex-row items-center justify-start text-sm text-gray-500 flex-grow border border-l-0 border-r-0 border-t-0 border-gray-100 px-6 py-3 hover:bg-gray-100 cursor-pointer">
+                    <span v-if="metric.score>60" class="text-green-400 font-semibold mr-2">
+                        Top {{ metric.score }}%
+                    </span>
+                    <span v-if="metric.score > 39 && metric.score < 61" class="text-yellow-400 font-semibold mr-2">
+                        Middle {{ metric.score }}%
+                    </span>
+                    <span v-if="metric.score<40" class="text-red-400 font-semibold mr-2">
+                        Bottom {{ metric.score }}%
+                    </span>
+                    {{ metric.label }}
+                </div>
+            </div>
         </div>
     </div>
 </template>
 <script>
+import ProfileHeader from "../components/ProfileHeader.vue"
+
 export default {
+    components: { ProfileHeader },
     layout: 'profile',
     head: {
         title: 'Compare - Cowlytics'
     },
     data: () => {
         return {
+            metrics: [
+                {
+                    score: 95,
+                    label: 'Monthly Recurring Revenue'
+                },
+                {
+                    score: 42,
+                    label: 'Lifetime Value'
+                },
+                {
+                    score: 82,
+                    label: 'User Churn'
+                },
+                {
+                    score: 91,
+                    label: 'Revenue Churn'
+                },
+                {
+                    score: 84,
+                    label: 'Active Customers'
+                },
+                {
+                    score: 90,
+                    label: 'Quick Ratio'
+                },
+                {
+                    score: 77,
+                    label: 'Failed Charges ($)'
+                },
+                {
+                    score: 81,
+                    label: 'Failed Charges (%)'
+                }
+            ],
             barChartData: {
                 labels: [
                 'Jan 21',
@@ -110,7 +164,8 @@ export default {
                         }
                     ]
                 }
-            }
+            },
+
         }
     }
 }
