@@ -40,7 +40,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     ['nuxt-gmaps', {
-      key: 'AIzaSyAGsi6BSIsDpXs4ZgQzZDMeSxckW_Z4zKU'
+      key: 'Thank god for GitGurdian because im an idiot!'
     }]
   ],
 
