@@ -35,18 +35,19 @@ export default {
             this.error = false;
 
             // Attempt login
-            await setTimeout(() => {
-                this.$nuxt.$loading.finish()
-                return window.location.href='/';
-            }, 500)
+            const { user, error } = await this.$supabase.auth.signIn({
+                email: this.email,
+                password: this.password,
+            });
             // Check for errors
-
-            // If errors, return error
-
-            // Else, store auth data & continue
-
+            if(error) return this.error = error;
+            // Else, fetch session
+            const session = this.$supabase.auth.session();
+            // Else, store auth data and continue
+            this.$store.commit('auth/login', session.access_token);
+            this.$store.commit('user/login', user);
             // Goto dashboard
-            //this.$router.push('/',{});
+            this.$router.push('/');
         }
     }
 }

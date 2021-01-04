@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="lg:h-screen lg:items-center lg:justify-center">
         <div class="flex flex-col items-center justify-center text-center">
             <h1 class="text-gray-900 text-3xl font-semibold mb-4">Howdy! Let's get you set up.</h1>
             <p class="text-gray-500 text-lg mb-8">First, let's connect your payment proccessor.</p>

@@ -22,6 +22,7 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    '~/plugins/supabase.js'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -41,7 +42,8 @@ export default {
     '@nuxtjs/axios',
     ['nuxt-gmaps', {
       key: 'Thank god for GitGurdian because im an idiot!'
-    }]
+    }],
+    'cookie-universal-nuxt',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)

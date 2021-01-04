@@ -209,6 +209,7 @@ export default {
     return {
       profile_menu: false,
     }
-  }
+  },
+  middleware: 'authenticated'
 }
 </script>

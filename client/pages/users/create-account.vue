@@ -66,6 +66,7 @@ export default {
             error: null
         };
     },
+    middleware: 'unauthenticated',
     methods: {
         async attempt_signup() {
             // Validate data
@@ -73,13 +74,16 @@ export default {
                 if(!this.password) return this.error = 'Password is required to sign up!';
                 if(!this.name) return this.error = 'Full name is required to sign up!';
             // Attempt signup
-
+            let { user, error } = await this.$supabase.auth.signUp({
+                email: this.email,
+                password: this.password
+            });
             // Check for errors
-
-            // If errors, return error
-
-            // Else, store auth data & continue
-
+            if(error) return this.error = error;
+            const session = this.$supabase.auth.session()
+            // Else, store auth and continue
+            this.$store.commit('auth/login', session.access_token);
+            this.$store.commit('user/login', user);
             // Goto dashboard
             window.location.href='/get-started';
         }
