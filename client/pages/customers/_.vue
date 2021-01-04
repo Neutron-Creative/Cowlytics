@@ -63,6 +63,7 @@
 <script>
 	export default {
 		layout: 'profile',
+		middleware: 'is-setup',
 		data: () => {
 			return {
 				location: {

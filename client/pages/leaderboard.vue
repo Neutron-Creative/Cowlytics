@@ -31,6 +31,7 @@ import ProfileHeader from "../components/ProfileHeader.vue"
 export default {
     components: { ProfileHeader },
     layout: 'profile',
+    middleware: 'is-setup',
     head: {
         title: 'Compare - Cowlytics'
     },

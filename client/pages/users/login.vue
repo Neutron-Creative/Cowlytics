@@ -5,12 +5,12 @@
         </a>
         <h1 class="text-3xl font-semibold text-gray-900 mb-4">Sign in</h1>
         <p class="text-gray-500 mb-2">Don't have an account yet?</p>
-        <n-link class="text-indigo-600 hover:underline mb-8" to="/users/create-account">Start your free 14 day trial</n-link>
+        <a class="text-indigo-600 hover:underline mb-8" href="/users/create-account">Start your free 14 day trial</a>
         <div v-if="error" class="w-full rounded-lg bg-red-200 border border-red-400 text-red-400 font-medium text-xs text-center p-3 mb-4">{{ error }}</div>
         <input v-model="email" type="text" placeholder="Email Address" class="mb-4 outline-none text-gray-500 text-sm p-3 rounded-lg border-gray-200 w-full focus:ring focus:ring-indigo-600 focus:ring-opacity-50"/>
         <input v-model="password" type="password" placeholder="Password" class="mb-4 outline-none text-gray-500 text-sm p-3 rounded-lg border-gray-200 w-full focus:ring focus:ring-indigo-600 focus:ring-opacity-50"/>
         <button @click="attempt_login" type="button" class="mb-4 text-center active:ring ring-indigo-600 ring-opacity-50 hover:bg-indigo-500 bg-indigo-600 text-white text-sm font-semibold rounded-lg w-full px-6 py-3">Sign in</button>
-        <n-link class="text-indigo-600 hover:underline mb-8 text-sm" to="/users/forgot-password">Forgot your password?</n-link>
+        <a class="text-indigo-600 hover:underline mb-8 text-sm" href="/users/forgot-password">Forgot your password?</a>
     </div>
 </template>
 <script>
@@ -18,6 +18,7 @@ export default {
     head: {
         title: 'Login - Cowlytics'
     },
+    middleware: 'unauthenticated',
     data: () => {
         return {
             email: null,

@@ -71,6 +71,7 @@ import ProfileHeader from '../components/ProfileHeader.vue';
 export default {
   components: { ProfileHeader },
     layout: 'profile',
+    middleware: 'is-setup',
     data: () => {
         return {
             lineChartData: {

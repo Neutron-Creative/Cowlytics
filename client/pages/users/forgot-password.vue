@@ -29,6 +29,7 @@ export default {
             complete: false,
         };
     },
+    middleware: 'unauthenticated',
     methods: {
         async attempt_reset() {
             // Validate data

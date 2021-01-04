@@ -108,6 +108,7 @@ import profile from '../../layouts/profile.vue';
 export default {
   components: { profile, ProfileHeader },
     layout: 'profile',
+    middleware: 'is-setup',
     data: () => {
         return {
             lineChartData: {

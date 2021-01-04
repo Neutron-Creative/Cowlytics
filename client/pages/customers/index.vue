@@ -61,6 +61,7 @@
 <script>
 export default {
     layout: 'profile',
+    middleware: 'is-setup',
     head: {
         title: 'Customers - Cowlytics'
     },

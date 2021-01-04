@@ -84,8 +84,19 @@ export default {
             // Else, store auth and continue
             this.$store.commit('auth/login', session.access_token);
             this.$store.commit('user/login', user);
+            // Add full name to user
+            const { updated_user, error2 } = await this.$supabase
+                .from('users')
+                .update({ name: this.name })
+                .match({ id: session.user.id })
+            // Create first organization
+            const { data, error3 } = await this.$supabase
+                .from('organizations')
+                .insert([
+                    { parent: session.user.id }
+                ]);
             // Goto dashboard
-            window.location.href='/get-started';
+            this.$router.push('/get-started');
         }
     }
 }

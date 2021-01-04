@@ -109,6 +109,7 @@ export default {
     head: {
         title: 'Forecasting - Cowlytics'
     },
+    middleware: 'is-setup',
     data: () => {
         return {
             lineChartData: {
