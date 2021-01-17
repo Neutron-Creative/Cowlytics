@@ -11,7 +11,13 @@ export default async function(context) {
     console.log(organizations);
 
     if(organizations.length==0) {
-        return context.redirect('/get-started');
+        // Create first organization
+        const { data2, error2 } = await this.$supabase
+        .from('organizations')
+        .insert([
+            { parent: session.user.id }
+        ]);
+        return;
     }
 
     let has_one_profile_setup = false;
@@ -22,7 +28,7 @@ export default async function(context) {
         }
     }
 
-    if(!has_one_profile_setup) return context.redirect('/get-started');
+    if(has_one_profile_setup) return context.redirect('/');
 
     return;
 }

@@ -118,7 +118,7 @@
     </div>
         <div class="flex flex-col max-w-8xl mx-auto w-10/12 relative">
           <Nuxt class="flex flex-col w-full lg:py-12 py-24 lg:px-4"/>
-          <div class="banner flex flex-col lg:flex-row items-center justify-center w-full lg:w-10/12 max-w-8xl p-4 lg:rounded-lg bg-gray-800 fixed shadow-lg">
+          <div v-if="!authenticated" class="banner flex flex-col lg:flex-row items-center justify-center w-full lg:w-10/12 max-w-8xl p-4 lg:rounded-lg bg-gray-800 fixed shadow-lg">
             <span class="text-white font-medium mb-1 lg:mb-0 lg:mr-2 text-sm">Cowlytics for Company Inc: </span>
             <span class="text-gray-400 text-sm lg:mb-0 mb-3">Get these metrics for your company!</span>
             <n-link class="w-full lg:w-auto text-center bg-white text-indigo-600 font-semibold text-sm px-6 py-3 rounded-lg ml-auto hover:bg-gray-100" to="/users/create-account">
@@ -208,6 +208,7 @@ export default {
   data: () => {
     return {
       profile_menu: false,
+      authenticated: true
     }
   },
   middleware: 'authenticated'

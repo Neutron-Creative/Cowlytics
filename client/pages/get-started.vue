@@ -11,10 +11,25 @@
 <script>
 export default {
     layout: 'profile',
+    middleware: 'is-not-setup',
     methods: {
         attempt_stripe_connect: () => {
             return window.location.href='https://connect.stripe.com/oauth/authorize?response_type=code&client_id=ca_Gga0JdNXOGKqNN3d4pyA4d4gD7haJDAV&scope=read_only';
         }
+    },
+    async mounted () {
+
+        // Fetch auth session
+        const session = this.$supabase.auth.session();
+        console.log(session);
+        // Fetch URL Params
+        const params = this.$router.history.current.query;
+        // If missing Stripe metadata, kill and do nothing
+        if(!params.scope || !params.code) return;
+        let { data2, error } = await this.$supabase.from('organizations').update({ 'stripe_code': params.code }).match({'parent': session.user.id});
+        if(error) console.log(error);
+        if(data2) console.log(data);
+        console.log('result');
     }
 }
 </script>

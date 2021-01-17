@@ -4,8 +4,10 @@
   "description": "The open-source analytics dashboard for Stripe based SaaS businesses.",
   "main": "index.js",
   "scripts": {
+    "install-project": "cd client && npm install",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "version": "auto-changelog -p && git add CHANGELOG.md"
+    "version": "auto-changelog -p && git add CHANGELOG.md",
+    "fetch-latest": "git pull && cd client && nuxt build"
   },
   "author": "Neutron Creative Inc.",
   "license": "UNLICENSED",
